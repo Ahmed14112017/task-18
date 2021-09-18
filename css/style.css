@@ -1,0 +1,194 @@
+*,.body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    
+}
+
+a{
+    color: #000;
+}
+nav .timezone-logo{
+    width: 25%;
+
+}
+nav .timezone-logo img{
+    width: 50%;
+}
+nav .list{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 0;
+    
+}
+nav label , nav #ntp{
+    display: none;
+}
+
+nav .list li:nth-child(4)::after{
+    content: "HOT";
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    background-color: rgb(221, 13, 13);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    filter: drop-shadow(2px 4px 6px #000 );
+    border: 1px solid transparent;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    font-size: 12px;
+    -webkit-filter: drop-shadow(2px 4px 3px #000 );
+}
+nav .list a:hover{
+    color: rgb(221, 13, 13);
+}
+nav .list .product{
+    position: absolute;
+    top: 80px;
+    background-color: rgb(156, 148, 148);
+    width: 150px;
+    border-top: 4px solid rgb(221, 13, 13);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+nav .list .product::before{
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid rgb(221, 13, 13);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+nav .list .product li{
+    padding:20px;
+}
+nav .list li:nth-child(4):hover .product{
+    visibility: visible;
+    opacity: 1;
+}
+nav .list li:nth-child(5):hover .product{
+    visibility: visible;
+    opacity: 1;
+}
+nav .list li:nth-child(6):hover .product{
+    visibility: visible;
+    opacity: 1;
+}
+nav .icon{
+    width: 25%;
+    text-align: center;
+    
+    
+}
+nav .icon i{
+    padding-left:20px;
+}
+/*
+media quaery
+*/
+@media (max-width:950px){
+    nav{
+        padding: 20px;
+    }
+    nav .list{
+        display: unset;
+        position: absolute;
+        background-color: tomato;
+        width: 90%;
+        top: 60px;
+        left: 5%;
+        padding: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+}
+    nav .list li{
+        padding: 10px 0;
+    }
+    nav .list li:nth-child(4)::after{
+        display: none;
+    }
+    nav .list .product {
+        position: unset;
+        background-color: transparent;
+        border-top: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        display: none;
+}
+    nav .list li:nth-child(4):hover .product{
+        display: block;
+    }
+    nav .list li:nth-child(5):hover .product{
+        display: block;
+        
+    }
+    nav .list li:nth-child(6):hover .product{
+        display: block;
+        
+}
+nav .list .product::before{
+    display: none;
+}
+nav label{
+    display: block;
+    order: 2;
+    width: 25%;
+    text-align: center;
+}
+nav #ntp:checked ~ .list{
+    opacity: 1;
+    visibility:visible;
+    top: 50px;
+}
+nav .icon{
+    width: 50%;
+    text-align: center;
+    
+    
+    
+}
+}
