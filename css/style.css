@@ -1,4 +1,8 @@
-*,.body{
+:root{
+    --firstcolor:#FF003C;
+    --secondcolor:#141517;
+}
+*,body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,6 +11,10 @@
 }
 body{
     font-family: 'Josefin Sans', sans-serif;
+    
+}
+html{
+    font-size: 10px;
 }
 
 nav{
@@ -15,6 +23,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    font-size: 1.7rem;
     
 }
 
@@ -46,7 +55,7 @@ nav .list li:nth-child(4)::after{
     position: absolute;
     top: 2px;
     left: 50%;
-    background-color: rgb(221, 13, 13);
+    background-color: var(--firstcolor);
     color: #fff;
     text-align: center;
     padding: 5px;
@@ -61,14 +70,14 @@ nav .list li:nth-child(4)::after{
     -webkit-filter: drop-shadow(2px 4px 3px #000 );
 }
 nav .list a:hover{
-    color: rgb(221, 13, 13);
+    color: var(--firstcolor);
 }
 nav .list .product{
     position: absolute;
     top: 80px;
     background-color: rgb(156, 148, 148);
     width: 150px;
-    border-top: 4px solid rgb(221, 13, 13);
+    border-top: 4px solid var(--firstcolor);
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -90,7 +99,7 @@ nav .list .product::before{
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
-    border-bottom: 10px solid rgb(221, 13, 13);
+    border-bottom: 10px solid var(--firstcolor);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
 }
@@ -119,19 +128,165 @@ nav .icon{
 nav .icon i{
     padding-left:20px;
 }
+
+
+
+/*
+header section
+
+*/
+header{
+    background-color: #F0F0F2;
+    overflow: hidden;
+}
+.container{
+    width: 85%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.header-content{
+    align-self: center;
+    width: 60%;
+    animation: moveright;
+    -webkit-animation: moveright;
+    animation-duration: 1s;
+    
+}
+@keyframes moveright{
+    0%{
+        transform: translateX(-120%);
+        -webkit-transform: translateX(-120%);
+        -moz-transform: translateX(-120%);
+        -ms-transform: translateX(-120%);
+        -o-transform: translateX(-120%);
+}
+100%{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+}
+.header-content h1{
+    font-size: 8rem;
+    padding-bottom: 4rem;
+    color: #0b1c39;
+}
+.header-content p{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    padding-bottom: 6rem;
+    color: #212025;
+}
+.header-content .btn{
+    background-color: #4a4a4b;
+    color: #fff;
+    font-size: 2.2rem;
+    padding: 2rem 3.5rem;
+    border: 1px solid transparent;
+    border-radius:  5px;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:  5px;
+    -ms-border-radius:  5px;
+    -o-border-radius:  5px;
+    position: relative;
+    z-index: 3;
+    
+}
+.header-content .btn::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--firstcolor);
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transition: all .4s ease-in;
+    -webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform-origin: left;
+}
+.header-content .btn:hover::before{
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+}
+.header-img{
+    width: 40%;
+}
+.header-img img{
+    width: 80%;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    
+    
+}
+@keyframes move{
+    0%{
+        transform:scale(1);
+        -moz-transform:scale(1);
+        -ms-transform:scale(1);
+        -o-transform:scale(1);
+        -webkit-transform:scale(1);
+}
+100%{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+}
 /*
 media quaery
 */
-@media (max-width:950px){
+@media (max-width:1119px){
+    .header-content{
+        align-self: center;
+        width: 60%;
+        padding: 40px 0;
+    }
+    .header-content h1{
+        font-size: 4rem;
+    }
+    .header-img{
+        width: 25%;
+    }
+    .header-img img{
+        width: 100%;
+    }
+    header .row{
+        justify-content: space-between;
+    }
+}
+@media (max-width:991px){
     nav{
         padding: 20px;
     }
     nav .list{
         display: unset;
         position: absolute;
-        background-color: tomato;
+        background-color: rgb(207, 201, 201);
         width: 90%;
-        top: 60px;
+        top: 65px;
         left: 5%;
         padding: 10px;
         opacity: 0;
@@ -141,6 +296,7 @@ media quaery
         -moz-transition: all .5s;
         -ms-transition: all .5s;
         -o-transition: all .5s;
+        z-index: 1;
 }
     nav .list li{
         padding: 10px 0;
@@ -182,13 +338,52 @@ nav label{
 nav #ntp:checked ~ .list{
     opacity: 1;
     visibility:visible;
-    top: 50px;
+    top: 65px;
 }
 nav .icon{
     width: 50%;
     text-align: center;
-    
-    
-    
 }
+/*
+header media quaery
+*/
+.header-content{
+    align-self: center;
+    width: 60%;
+    padding: 40px 0;
+}
+.header-content h1{
+    font-size: 4rem;
+}
+.header-img{
+    width: 25%;
+}
+.header-img img{
+    width: 100%;
+}
+header .row{
+    justify-content: space-between;
+}
+
+}
+
+
+@media (max-width:767px){
+
+}
+@media (max-width:567px){
+    .header-img{
+        display: none;
+    }
+    .header-content{
+        align-self: center;
+        width: 100%;
+        padding: 40px 0;
+    }
+    .header-content h1{
+        font-size: 4rem;
+    }
+    .header-content p{
+        font-size: 2rem;
+    }
 }
