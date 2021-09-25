@@ -75,7 +75,7 @@ nav .list a:hover{
 nav .list .product{
     position: absolute;
     top: 80px;
-    background-color: rgb(156, 148, 148);
+    background-color: rgb(255, 255, 255);
     width: 150px;
     border-top: 4px solid var(--firstcolor);
     border-radius: 8px;
@@ -105,7 +105,7 @@ nav .list .product::before{
 }
 
 nav .list .product li{
-    padding:20px;
+    padding:10px;
 }
 nav .list li:nth-child(4):hover .product{
     visibility: visible;
