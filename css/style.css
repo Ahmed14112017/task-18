@@ -605,8 +605,71 @@ bg section
     color: #FF0000;
 }
 
-
-
+/*
+Watch of Choice section
+*/
+.watch{
+    padding: 100px 0;
+}
+.watch .watch-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.watch .watch-item .watch-info{
+    padding: 0 50px;
+}
+.watch .watch-item .watch-info h2{
+    font-size: 5rem;
+    padding-bottom: 4rem;
+}
+.watch .watch-item .watch-info p{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: #a09c9c;
+    padding-bottom: 5rem;
+}
+.watch .watch-item .watch-info .btn{
+    background-color: #FF0000;
+    color: #fff;
+    padding: 2rem 3.5rem;
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 4;
+}
+.watch .watch-item .watch-info .btn a{
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.watch .watch-item .watch-info .btn::before{
+    content: "";
+    position: absolute;
+    width:0%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color:#4a4a4b;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    z-index: -2;
+}
+.watch .watch-item .watch-info .btn:hover::before{
+    width: 100%;
+    
+}
+.watch .watch-item .photo{
+    padding-right:40px ;
+    width: 100%;
+}
+.watch .watch-item .photo img{
+    width: 100%;
+}
 /*
 media quaery
 */
@@ -646,6 +709,34 @@ Arrivals section
     .Arrivals .photo-item .photo-info p{
         font-size: 2rem;
     }
+    /*
+    watch section
+    */
+/*
+    section watch
+    */
+
+    
+    .watch .watch-item .watch-info{
+        text-align: left;
+        padding: 50px 20px;
+        width:50%;
+    }
+    .watch .watch-item .watch-info h2{
+        font-size: 3rem;
+    }
+    .watch .watch-item .watch-info p{
+        font-size: 1.5rem;
+    }
+    
+    .watch .watch-item .photo {
+        padding: 0;
+        width: 50%;
+    }
+    .watch .watch-item .photo img{
+        width: 100%;
+    }
+    
 }
 @media (max-width:991px){
     nav{
@@ -796,6 +887,7 @@ Arrivals section
         width: 40%;
         padding: 40px;
     }
+
     
 
 }
@@ -834,6 +926,31 @@ Arrivals section
         width: 40%;
         padding: 20px;
     }
+    /*
+    section watch
+    */
+    .watch .watch-item{
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+    }
+    .watch .watch-item .watch-info{
+        text-align: left;
+        padding: 50px 0;
+        width: 100%;
+        
+    }
+    .watch .watch-item .watch-info p{
+        font-size: 1.5rem;
+    }
+    .watch .watch-item .photo {
+        padding: 0;
+        width: 100%;
+    }
+
+    
+    
     
 }
 @media (max-width:567px){
@@ -898,5 +1015,7 @@ Arrivals section
         width: 60%;
         padding: 20px;
     }
+    
+    
     
 }
